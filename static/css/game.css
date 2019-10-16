@@ -1,0 +1,49 @@
+@import "base.css";
+
+/*game*/
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: calc((100% - 1200px) / 2);
+}
+.box {
+    flex: 1;
+    text-align: center;
+}
+
+.donamorte {
+    max-width: 300px;
+}
+
+.game-box {
+    background: rgba(255, 255, 255, 0.692);
+    padding: 2em;
+}
+.palavra {
+    font-size: 2em;
+    word-spacing: 1ch;
+    padding: 3em 0;  
+    display: block;
+}
+.form-chute {
+    display: flex;
+}
+.form-chute input {
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+.form-chute button {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.chutes, .vidas {
+    padding: 20px 0;
+    text-align: left;
+    font-size: 1.1em;
+}
+.qtd-vidas {
+    color: red;
+    font-size: 1.2em;
+
+}

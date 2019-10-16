@@ -1,0 +1,23 @@
+{% extends 'base.html' %}   
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/game.css')}}">
+{% endblock head %}
+{% block title %}Jogo da Forca{% endblock title %}
+{% block content %}
+    <main>
+        <div class="center">
+            <h1 class="big-h1">FORCA DA DONA MORTE</h1>
+            <h2 class="big-h2">O SEU NOME ESTÁ NA LISTA</h2>
+            <!-- <img src="../imagens/foice.png" class="img-foice" alt="Foice da dona morte"> -->
+            <a href="{{url_for('jogar')}}" class="btn-play">
+                <div class="img-caption">
+                    <img src="{{url_for('static', filename='imagens/Caixao.png')}}">
+                    <span class="caption">CLIQUE<br>
+                                        PARA <br>
+                                        JOGAR</span>
+                </div>
+            </a>
+        </div>
+    </main>
+{% endblock content %}

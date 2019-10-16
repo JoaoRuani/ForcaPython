@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/game.css')}}">
+{% endblock head %}
+{% block title %}
+Jogo Da Forca
+{% endblock title %}
+{% block content %}
+<div class="flex">
+    <div class="box">
+        <img src="{{url_for('static', filename='imagens/Morte.png')}}" alt="A morte em pessoa" class="donamorte">
+    </div>
+    <div class="box">
+        <div class="game-box">
+            <span class="palavra">
+                {% for letra in jogo.palavra_secreta.palavra_escondida %}
+                    {{letra}}
+                {% endfor %}
+            </span>
+            <form class="form-chute" action="{{url_for('jogar')}}" method="POST">
+                <input type="text" placeholder="Digite uma letra" name="letra" maxlength="1">
+                <button type="submit">Chutar</button>
+            </form>
+            <div>{{mensagem_feedback}}</div>
+            <p class="chutes">Chutes: {% for letra in jogo.historico_chutes %}
+                {{letra}}
+            {% endfor %}</p>
+            <p class="vidas">Vidas Restantes: <span class="qtd-vidas">{{jogo.chances}}</span></p>
+            <a href="{{url_for('novo_jogo')}}">Novo Jogo</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
