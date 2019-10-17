@@ -7,7 +7,10 @@ Jogo Da Forca
 {% endblock title %}
 {% block content %}
 <div class="flex">
-    <div class="box">
+    <div class="box box-morte">
+        <figure class="mensagem-fala">
+            <figcaption>{{mensagem_feedback}}</figcaption>
+        </figure>
         <img src="{{url_for('static', filename='imagens/Morte.png')}}" alt="A morte em pessoa" class="donamorte">
     </div>
     <div class="box">
@@ -21,7 +24,6 @@ Jogo Da Forca
                 <input type="text" placeholder="Digite uma letra" name="letra" maxlength="1">
                 <button type="submit">Chutar</button>
             </form>
-            <div>{{mensagem_feedback}}</div>
             <p class="chutes">Chutes: {% for letra in jogo.historico_chutes %}
                 {{letra}}
             {% endfor %}</p>
@@ -30,4 +32,10 @@ Jogo Da Forca
         </div>
     </div>
 </div>
+<script>
+    var balao_fala = document.getElementsByClassName('mensagem-fala')[0]
+    var mensagem = balao_fala.getElementsByTagName('figcaption')[0]
+    if(mensagem.textContent.length == 0)
+        balao_fala.style.display = 'none'
+</script>
 {% endblock content %}

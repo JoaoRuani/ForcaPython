@@ -43,7 +43,27 @@
     font-size: 1.1em;
 }
 .qtd-vidas {
-    color: red;
+    color: #FF332C;
     font-size: 1.2em;
 
+}
+.box-morte {
+    position: relative;
+}
+.mensagem-fala {
+    position: absolute;
+    top: -100px;
+    right: 5px;
+    width: 250px;
+    height: 250px;
+    background: url(../imagens/balão.png) center no-repeat;
+    background-size: contain;
+
+}
+.mensagem-fala figcaption {
+    position: absolute;
+    top: 34%;
+    color: rgb(216, 216, 216);
+    font-weight: 100;
+    transform: translateY(-20%);
 }
