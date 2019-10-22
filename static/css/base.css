@@ -9,6 +9,7 @@ body {
     background: url(../imagens/gray_background.png) fixed;
     background-size: 100%;
     overflow: hidden;
+    margin: 0;
 }
 img {
     max-width: 100%;
